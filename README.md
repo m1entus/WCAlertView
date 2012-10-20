@@ -3,6 +3,8 @@ WCAlertView
 
 WCAlertView is a subclass from UIAlertView with possibility of customization.
 
+You can easly custom your UIAlertView.
+
 [![](https://raw.github.com/m1entus/WCAlertView/master/Example/1thumb.png)](https://raw.github.com/m1entus/WCAlertView/master/Example/1.png)
 [![](https://raw.github.com/m1entus/WCAlertView/master/Example/2thumb.png)](https://raw.github.com/m1entus/WCAlertView/master/Example/2.png)
 [![](https://raw.github.com/m1entus/WCAlertView/master/Example/3thumb.png)](https://raw.github.com/m1entus/WCAlertView/master/Example/3.png)
@@ -15,6 +17,7 @@ WCAlertView is a subclass from UIAlertView with possibility of customization.
 ## How To Use
 
 There is couple of predefined styles, you can use them, or write you own styles.
+
 WCAlertView support blocks.
 
 You can also set deafault appearance for all alert views:
