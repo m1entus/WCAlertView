@@ -1,6 +1,10 @@
 WCAlertView
 ==========
 
+[![](http://github.com/m1entus/WCAlertView/tree/master/Example/1.png)](http://github.com/m1entus/WCAlertView/tree/master/Example/1.png)
+[![](http://dl.dropbox.com/u/47535/TSAlertView/2-thumb.png)](http://dl.dropbox.com/u/47535/TSAlertView/2.png)
+[![](http://dl.dropbox.com/u/47535/TSAlertView/3-thumb.png)](http://dl.dropbox.com/u/47535/TSAlertView/3.png)
+
 ## How To Use
 
 There is couple of predefined styles, you can use them, or write you own styles.
@@ -16,15 +20,23 @@ You can also set deafault appearance for all alert views:
 You can use
 
 ``` objective-c
-[WCAlertView showAlertWithTitle:@"Custom AlertView Title" message:@"You can do a lot of additional setup using WCAlertView. You can do a lot of additional setup using WCAlertView" customizationBlock:^(WCAlertView *alertView) {
-        alertView.style = WCAlertViewStyleVioletHatched;
+[WCAlertView showAlertWithTitle:@"Custom AlertView Title" 
+					    message:@"You can do a lot of additional setup using WCAlertView." 
+					    customizationBlock:^(WCAlertView *alertView) {
+					    
+        					alertView.style = WCAlertViewStyleVioletHatched;
+        					
     } completionBlock:^(NSUInteger buttonIndex, WCAlertView *alertView) {
         
     } cancelButtonTitle:@"Cancel" otherButtonTitles:@"Okay",nil];
 ```
 
 ``` objective-c
-WCAlertView *alert = [[WCAlertView alloc] initWithTitle:@"Custom AlertView Title" message:@"You can do a lot of additional setup using WCAlertView. You can do a lot of additional setup using WCAlertView" delegate:nil cancelButtonTitle:@"Cancel" otherButtonTitles:@"Okay", nil];
+WCAlertView *alert = [[WCAlertView alloc] initWithTitle:@"Custom AlertView Title" 
+												message:@"You can do a lot of additional setup using WCAlertView." 
+											   delegate:nil cancelButtonTitle:@"Cancel" 
+											   otherButtonTitles:@"Okay", nil];
+											   
     alert.style = WCAlertViewStyleVioletHatched;
     
     [alert show];
