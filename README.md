@@ -1,9 +1,12 @@
 WCAlertView
 ==========
 
-[![](http://github.com/m1entus/WCAlertView/tree/master/Example/1.png)](http://github.com/m1entus/WCAlertView/tree/master/Example/1.png)
-[![](http://dl.dropbox.com/u/47535/TSAlertView/2-thumb.png)](http://dl.dropbox.com/u/47535/TSAlertView/2.png)
-[![](http://dl.dropbox.com/u/47535/TSAlertView/3-thumb.png)](http://dl.dropbox.com/u/47535/TSAlertView/3.png)
+[![](http://raw.github.com/m1entus/WCAlertView/master/Example/1.png)](http://raw.github.com/m1entus/WCAlertView/master/Example/1.png)
+[![](http://raw.github.com/m1entus/WCAlertView/master/Example/2.png)](http://raw.github.com/m1entus/WCAlertView/master/Example/2.png)
+[![](http://raw.github.com/m1entus/WCAlertView/master/Example/3.png)](http://raw.github.com/m1entus/WCAlertView/master/Example/3.png)
+[![](http://raw.github.com/m1entus/WCAlertView/master/Example/4.png)](http://raw.github.com/m1entus/WCAlertView/master/Example/4.png)
+[![](http://raw.github.com/m1entus/WCAlertView/master/Example/5.png)](http://raw.github.com/m1entus/WCAlertView/master/Example/5.png)
+[![](http://raw.github.com/m1entus/WCAlertView/master/Example/6.png)](http://raw.github.com/m1entus/WCAlertView/master/Example/6.png)
 
 ## How To Use
 
