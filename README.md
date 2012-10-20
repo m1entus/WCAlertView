@@ -1,12 +1,12 @@
 WCAlertView
 ==========
 
-[![](https://raw.github.com/m1entus/WCAlertView/master/Example/1.png)](https://raw.github.com/m1entus/WCAlertView/master/Example/1.png)
-[![](https://raw.github.com/m1entus/WCAlertView/master/Example/2.png)](https://raw.github.com/m1entus/WCAlertView/master/Example/2.png)
-[![](https://raw.github.com/m1entus/WCAlertView/master/Example/3.png)](https://raw.github.com/m1entus/WCAlertView/master/Example/3.png)
-[![](https://raw.github.com/m1entus/WCAlertView/master/Example/4.png)](https://raw.github.com/m1entus/WCAlertView/master/Example/4.png)
-[![](https://raw.github.com/m1entus/WCAlertView/master/Example/5.png)](https://raw.github.com/m1entus/WCAlertView/master/Example/5.png)
-[![](https://raw.github.com/m1entus/WCAlertView/master/Example/6.png)](https://raw.github.com/m1entus/WCAlertView/master/Example/6.png)
+[![](https://raw.github.com/m1entus/WCAlertView/master/Example/1thumb.png)](https://raw.github.com/m1entus/WCAlertView/master/Example/1.png)
+[![](https://raw.github.com/m1entus/WCAlertView/master/Example/2thumb.png)](https://raw.github.com/m1entus/WCAlertView/master/Example/2.png)
+[![](https://raw.github.com/m1entus/WCAlertView/master/Example/3thumb.png)](https://raw.github.com/m1entus/WCAlertView/master/Example/3.png)
+[![](https://raw.github.com/m1entus/WCAlertView/master/Example/4thumb.png)](https://raw.github.com/m1entus/WCAlertView/master/Example/4.png)
+[![](https://raw.github.com/m1entus/WCAlertView/master/Example/5thumb.png)](https://raw.github.com/m1entus/WCAlertView/master/Example/5.png)
+[![](https://raw.github.com/m1entus/WCAlertView/master/Example/6thumb.png)](https://raw.github.com/m1entus/WCAlertView/master/Example/6.png)
 
 ## How To Use
 
