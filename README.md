@@ -1,6 +1,8 @@
 WCAlertView
 ==========
 
+WCAlertView is a subclass from UIAlertView with possibility of customization.
+
 [![](https://raw.github.com/m1entus/WCAlertView/master/Example/1thumb.png)](https://raw.github.com/m1entus/WCAlertView/master/Example/1.png)
 [![](https://raw.github.com/m1entus/WCAlertView/master/Example/2thumb.png)](https://raw.github.com/m1entus/WCAlertView/master/Example/2.png)
 [![](https://raw.github.com/m1entus/WCAlertView/master/Example/3thumb.png)](https://raw.github.com/m1entus/WCAlertView/master/Example/3.png)
