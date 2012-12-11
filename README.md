@@ -26,8 +26,37 @@ You can also set deafault appearance for all alert views:
 [WCAlertView setDefaultStyle:WCAlertViewStyleWhite];
 ```
 
+Set default appearnce block for all WCAlertViews inside AppDelegate (similar to UIAppearance proxy)
 
-You can use
+``` objective-c
+[WCAlertView setDefaultCustomiaztonBlock:^(WCAlertView *alertView) {
+        alertView.labelTextColor = [UIColor colorWithRed:0.11f green:0.08f blue:0.39f alpha:1.00f];
+        alertView.labelShadowColor = [UIColor whiteColor];
+        
+        UIColor *topGradient = [UIColor colorWithRed:1.0f green:1.0f blue:1.0f alpha:1.0f];
+        UIColor *middleGradient = [UIColor colorWithRed:0.93f green:0.94f blue:0.96f alpha:1.0f];
+        UIColor *bottomGradient = [UIColor colorWithRed:0.89f green:0.89f blue:0.92f alpha:1.00f];
+        alertView.gradientColors = @[topGradient,middleGradient,bottomGradient];
+        
+        alertView.outerFrameColor = [UIColor colorWithRed:250.0f/255.0f green:250.0f/255.0f blue:250.0f/255.0f alpha:1.0f];
+        
+        alertView.buttonTextColor = [UIColor colorWithRed:0.11f green:0.08f blue:0.39f alpha:1.00f];
+        alertView.buttonShadowColor = [UIColor whiteColor];
+}];
+```
+
+If you want to use UITextField for password or plain inputtext, use UIAlertViewStyle.
+
+[WCAlertView showAlertWithTitle:@"Some title" message:@"Custom message" customizationBlock:^(WCAlertView *alertView) {
+        
+        alertView.alertViewStyle = UIAlertViewStyleSecureTextInput;
+        
+    } completionBlock:^(NSUInteger buttonIndex, WCAlertView *alertView) {
+
+    } cancelButtonTitle:@"Cancel" otherButtonTitles:@"Ok", nil];
+
+
+How to use:
 
 ``` objective-c
 [WCAlertView showAlertWithTitle:@"Custom AlertView Title" 
@@ -51,6 +80,10 @@ WCAlertView *alert = [[WCAlertView alloc] initWithTitle:@"Custom AlertView Title
     
     [alert show];
 ```
+
+## Requirements
+
+WCAlertView requires either iOS 5.0 and above.
 
 ## Credits
 
