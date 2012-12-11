@@ -43,7 +43,7 @@
         // You can also set different appearance for this alert using customization block
         
         alertView.style = WCAlertViewStyleBlack;
-        alertView.alertViewStyle = UIAlertViewStyleSecureTextInput;
+        alertView.alertViewStyle = UIAlertViewStyleLoginAndPasswordInput;
     } completionBlock:^(NSUInteger buttonIndex, WCAlertView *alertView) {
         if (buttonIndex == 0) {
             NSLog(@"Cancel");

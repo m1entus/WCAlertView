@@ -5,14 +5,15 @@ WCAlertView is a subclass from UIAlertView with possibility of customization.
 
 You can easly custom your UIAlertView.
 
-[![](https://raw.github.com/m1entus/WCAlertView/master/Example/1thumb.png)](https://raw.github.com/m1entus/WCAlertView/master/Example/1.png)
-[![](https://raw.github.com/m1entus/WCAlertView/master/Example/2thumb.png)](https://raw.github.com/m1entus/WCAlertView/master/Example/2.png)
-[![](https://raw.github.com/m1entus/WCAlertView/master/Example/3thumb.png)](https://raw.github.com/m1entus/WCAlertView/master/Example/3.png)
-[![](https://raw.github.com/m1entus/WCAlertView/master/Example/4thumb.png)](https://raw.github.com/m1entus/WCAlertView/master/Example/4.png)
+[![](https://raw.github.com/m1entus/WCAlertView/master/Screens/1thumb.png)](https://raw.github.com/m1entus/WCAlertView/master/Screens/1.png)
+[![](https://raw.github.com/m1entus/WCAlertView/master/Screens/2thumb.png)](https://raw.github.com/m1entus/WCAlertView/master/Screens/2.png)
+[![](https://raw.github.com/m1entus/WCAlertView/master/Screens/3thumb.png)](https://raw.github.com/m1entus/WCAlertView/master/Screens/3.png)
+[![](https://raw.github.com/m1entus/WCAlertView/master/Screens/4thumb.png)](https://raw.github.com/m1entus/WCAlertView/master/Screens/4.png)
 
-[![](https://raw.github.com/m1entus/WCAlertView/master/Example/5thumb.png)](https://raw.github.com/m1entus/WCAlertView/master/Example/5.png)
-[![](https://raw.github.com/m1entus/WCAlertView/master/Example/6thumb.png)](https://raw.github.com/m1entus/WCAlertView/master/Example/6.png)
-[![](https://raw.github.com/m1entus/WCAlertView/master/Example/7thumb.png)](https://raw.github.com/m1entus/WCAlertView/master/Example/7.png)
+[![](https://raw.github.com/m1entus/WCAlertView/master/Screens/5thumb.png)](https://raw.github.com/m1entus/WCAlertView/master/Screens/5.png)
+[![](https://raw.github.com/m1entus/WCAlertView/master/Screens/6thumb.png)](https://raw.github.com/m1entus/WCAlertView/master/Screens/6.png)
+[![](https://raw.github.com/m1entus/WCAlertView/master/Screens/7thumb.png)](https://raw.github.com/m1entus/WCAlertView/master/Screens/7.png)
+[![](https://raw.github.com/m1entus/WCAlertView/master/Screens/8thumb.png)](https://raw.github.com/m1entus/WCAlertView/master/Screens/8.png)
 
 ## How To Use
 
@@ -47,6 +48,7 @@ Set default appearnce block for all WCAlertViews inside AppDelegate (similar to 
 
 If you want to use UITextField for password or plain inputtext, use UIAlertViewStyle.
 
+``` objective-c
 [WCAlertView showAlertWithTitle:@"Some title" message:@"Custom message" customizationBlock:^(WCAlertView *alertView) {
         
         alertView.alertViewStyle = UIAlertViewStyleSecureTextInput;
@@ -54,7 +56,7 @@ If you want to use UITextField for password or plain inputtext, use UIAlertViewS
     } completionBlock:^(NSUInteger buttonIndex, WCAlertView *alertView) {
 
     } cancelButtonTitle:@"Cancel" otherButtonTitles:@"Ok", nil];
-
+```
 
 How to use:
 
