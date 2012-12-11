@@ -46,12 +46,18 @@
 
 
 static WCAlertViewStyle kDefaultAlertStyle = WCAlertViewStyleDefault;
+static CustomizationBlock kDefauldCustomizationBlock = nil;
 
 + (void)setDefaultStyle:(WCAlertViewStyle)style
 {
     
     kDefaultAlertStyle = style;
     
+}
+
++ (void)setDefaultCustomiaztonBlock:(CustomizationBlock)block
+{
+    kDefauldCustomizationBlock = block;
 }
 
 + (id)showAlertWithTitle:(NSString *)title message:(NSString *)message customizationBlock:(void (^)(WCAlertView *alertView))customization completionBlock:(void (^)(NSUInteger buttonIndex, WCAlertView *alertView))block cancelButtonTitle:(NSString *)cancelButtonTitle otherButtonTitles:(NSString *)otherButtonTitles, ...
@@ -86,7 +92,11 @@ static WCAlertViewStyle kDefaultAlertStyle = WCAlertViewStyleDefault;
 {
     if (self = [super initWithTitle:title message:message delegate:delegate cancelButtonTitle:cancelButtonTitle otherButtonTitles:nil]) {
         
-        [self setDefaultStyle];
+        [self defaultStyle];
+        
+        if (kDefauldCustomizationBlock) {
+            self.style = WCAlertViewStyleCustomizationBlock;
+        }
         
         va_list args;
         va_start(args, otherButtonTitles);
@@ -139,7 +149,7 @@ static WCAlertViewStyle kDefaultAlertStyle = WCAlertViewStyleDefault;
     }
 }
 
-- (void)setDefaultStyle
+- (void)defaultStyle
 {
     self.buttonShadowBlur = 2.0f;
     self.buttonShadowOffset = CGSizeMake(0.5f, 0.5f);
@@ -177,6 +187,11 @@ static WCAlertViewStyle kDefaultAlertStyle = WCAlertViewStyleDefault;
             break;
         case WCAlertViewStyleVioletHatched:
             [self violetAlertHetched:YES];
+            break;
+        case WCAlertViewStyleCustomizationBlock:
+            if (kDefauldCustomizationBlock) {
+                kDefauldCustomizationBlock(self);
+            }
             break;
         default:
             self.style = kDefaultAlertStyle;
@@ -270,7 +285,18 @@ static WCAlertViewStyle kDefaultAlertStyle = WCAlertViewStyleDefault;
             
             //Find and hide UIImageView Containing Blue Background
             if ([subview isMemberOfClass:[UIImageView class]]) {
-                subview.hidden = YES; 
+                NSLog(@"%@",NSStringFromClass([subview class]));
+                NSLog(@"%d",subview.tag);
+                
+                CGRect rect = [subview frame];
+                
+                // Find and hide only background image view
+                // It prevent hiding UITextFiled for UIAlertViewStyleLoginAndPasswordInput
+                
+                if (rect.origin.x == 0 || rect.origin.y == 0) {
+                    subview.hidden = YES;
+                }
+                
             }
             
             //Find and get styles of UILabels

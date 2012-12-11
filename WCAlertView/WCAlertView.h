@@ -25,16 +25,23 @@
 
 #import <UIKit/UIKit.h>
 
+@class WCAlertView;
+
 typedef NS_ENUM(NSInteger, WCAlertViewStyle)
 {
     WCAlertViewStyleDefault = 0,
+    
     WCAlertViewStyleWhite,
     WCAlertViewStyleWhiteHatched,
     WCAlertViewStyleBlack,
     WCAlertViewStyleBlackHatched,
     WCAlertViewStyleViolet,
     WCAlertViewStyleVioletHatched,
+    
+    WCAlertViewStyleCustomizationBlock,
 };
+
+typedef void(^CustomizationBlock)(WCAlertView *alertView);
 
 @interface WCAlertView : UIAlertView
 
@@ -94,9 +101,12 @@ typedef NS_ENUM(NSInteger, WCAlertViewStyle)
  *  Setting default appearance for all WCAlertView's
  */
 + (void)setDefaultStyle:(WCAlertViewStyle)style;
++ (void)setDefaultCustomiaztonBlock:(CustomizationBlock)block;
 
 
-+ (id)showAlertWithTitle:(NSString *)title message:(NSString *)message customizationBlock:(void (^)(WCAlertView *alertView))customization completionBlock:(void (^)(NSUInteger buttonIndex, WCAlertView *alertView))block cancelButtonTitle:(NSString *)cancelButtonTitle otherButtonTitles:(NSString *)otherButtonTitles, ... NS_REQUIRES_NIL_TERMINATION;
++ (id)showAlertWithTitle:(NSString *)title message:(NSString *)message customizationBlock:(void (^)(WCAlertView *alertView))customization
+         completionBlock:(void (^)(NSUInteger buttonIndex, WCAlertView *alertView))block
+       cancelButtonTitle:(NSString *)cancelButtonTitle otherButtonTitles:(NSString *)otherButtonTitles, ... NS_REQUIRES_NIL_TERMINATION;
 
 
 @end

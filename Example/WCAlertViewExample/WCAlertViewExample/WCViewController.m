@@ -18,9 +18,32 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
+    
+    // Set default appearnce block for all WCAlertViews
+    // Similar functionality to UIAppearnce Proxy
+    
+    [WCAlertView setDefaultCustomiaztonBlock:^(WCAlertView *alertView) {
+        alertView.labelTextColor = [UIColor colorWithRed:0.11f green:0.08f blue:0.39f alpha:1.00f];
+        alertView.labelShadowColor = [UIColor whiteColor];
+        
+        UIColor *topGradient = [UIColor colorWithRed:1.0f green:1.0f blue:1.0f alpha:1.0f];
+        UIColor *middleGradient = [UIColor colorWithRed:0.93f green:0.94f blue:0.96f alpha:1.0f];
+        UIColor *bottomGradient = [UIColor colorWithRed:0.89f green:0.89f blue:0.92f alpha:1.00f];
+        alertView.gradientColors = @[topGradient,middleGradient,bottomGradient];
+        
+        alertView.outerFrameColor = [UIColor colorWithRed:250.0f/255.0f green:250.0f/255.0f blue:250.0f/255.0f alpha:1.0f];
+        
+        alertView.buttonTextColor = [UIColor colorWithRed:0.11f green:0.08f blue:0.39f alpha:1.00f];
+        alertView.buttonShadowColor = [UIColor whiteColor];
+    }];
+
+    
     [WCAlertView showAlertWithTitle:@"Some title" message:@"Custom message" customizationBlock:^(WCAlertView *alertView) {
-        alertView.style = WCAlertViewStyleBlackHatched;
+        
+        // You can also set different appearance for this alert using customization block
+        
+        alertView.style = WCAlertViewStyleBlack;
+        alertView.alertViewStyle = UIAlertViewStyleSecureTextInput;
     } completionBlock:^(NSUInteger buttonIndex, WCAlertView *alertView) {
         if (buttonIndex == 0) {
             NSLog(@"Cancel");
