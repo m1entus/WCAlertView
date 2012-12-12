@@ -19,6 +19,7 @@
     self.viewController = [[WCViewController alloc] initWithNibName:@"WCViewController" bundle:nil];
     self.window.rootViewController = self.viewController;
     [self.window makeKeyAndVisible];
+    
     return YES;
 }
 

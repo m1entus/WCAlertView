@@ -285,8 +285,6 @@ static CustomizationBlock kDefauldCustomizationBlock = nil;
             
             //Find and hide UIImageView Containing Blue Background
             if ([subview isMemberOfClass:[UIImageView class]]) {
-                NSLog(@"%@",NSStringFromClass([subview class]));
-                NSLog(@"%d",subview.tag);
                 
                 CGRect rect = [subview frame];
                 
@@ -383,10 +381,19 @@ static CustomizationBlock kDefauldCustomizationBlock = nil;
             
             NSInteger startIndex = (idx * 4);
             
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_5_0
             [color getRed:&components[startIndex]
                     green:&components[startIndex+1]
                      blue:&components[startIndex+2]
                     alpha:&components[startIndex+3]];
+#else
+            const CGFloat *colorComponent = CGColorGetComponents(color.CGColor);
+            
+            components[startIndex]   = colorComponent[0];
+            components[startIndex+1] = colorComponent[1];
+            components[startIndex+2] = colorComponent[2];
+            components[startIndex+3] = colorComponent[3];
+#endif
         }];
         
         CGGradientRef gradient = CGGradientCreateWithColorComponents(colorSpace, components, locations, count);
@@ -410,10 +417,19 @@ static CustomizationBlock kDefauldCustomizationBlock = nil;
             CGContextClipToRect(context, hatchFrame);
             
             if (self.hatchedBackgroundColor) {
-                CGFloat r,g,b,a;
-                [self.hatchedBackgroundColor getRed:&r green:&g blue:&b alpha:&a];
+                CGFloat red,green,blue,alpha;
                 
-                CGContextSetRGBFillColor(context, r*255,g*255, b*255, 255);
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_5_0
+                [self.hatchedBackgroundColor getRed:&red green:&green blue:&blue alpha:&alpha];
+#else
+                const CGFloat *colorComponent = CGColorGetComponents(self.hatchedBackgroundColor.CGColor);
+                
+                red = colorComponent[0];
+                green = colorComponent[1];
+                blue = colorComponent[2];
+                alpha = colorComponent[3];
+#endif
+                CGContextSetRGBFillColor(context, red,green, blue, alpha);
                 CGContextFillRect(context, hatchFrame);
             }
             
