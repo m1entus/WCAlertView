@@ -85,7 +85,17 @@ WCAlertView *alert = [[WCAlertView alloc] initWithTitle:@"Custom AlertView Title
 
 ## Requirements
 
-WCAlertView requires either iOS 5.0 and above.
+WCAlertView requires either iOS 4.3 and above.
+
+If you want full functionality, please use iOS 5 and above. 
+
+## License
+
+WCAlertView is available under the MIT license. See the LICENSE file for more info.
+
+## ARC
+
+WCAlertView uses ARC.
 
 ## Credits
 
