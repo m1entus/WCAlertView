@@ -89,6 +89,14 @@ WCAlertView requires either iOS 4.3 and above.
 
 If you want full functionality, please use iOS 5 and above. 
 
+## Apps that uses WCAlertView
+
+[Melon](https://itunes.apple.com/pl/app/melon-app/id526701222?mt=8)
+
+[University de Chile](https://itunes.apple.com/app/id571677095)
+
+[Contact me](http://twitter.com/iMientus) if you want your app listed here. Thanks 
+
 ## License
 
 WCAlertView is available under the MIT license. See the LICENSE file for more info.

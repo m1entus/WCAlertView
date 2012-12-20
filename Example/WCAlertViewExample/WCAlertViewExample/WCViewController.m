@@ -50,7 +50,7 @@
         } else {
             NSLog(@"Ok");
         }
-    } cancelButtonTitle:@"Cancel" otherButtonTitles:@"Ok", nil];
+    } cancelButtonTitle:@"Long Message test" otherButtonTitles:@"Ok", nil];
     
 }
 

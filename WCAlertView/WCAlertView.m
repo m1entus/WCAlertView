@@ -381,19 +381,19 @@ static CustomizationBlock kDefauldCustomizationBlock = nil;
             
             NSInteger startIndex = (idx * 4);
             
-#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_5_0
-            [color getRed:&components[startIndex]
-                    green:&components[startIndex+1]
-                     blue:&components[startIndex+2]
-                    alpha:&components[startIndex+3]];
-#else
-            const CGFloat *colorComponent = CGColorGetComponents(color.CGColor);
-            
-            components[startIndex]   = colorComponent[0];
-            components[startIndex+1] = colorComponent[1];
-            components[startIndex+2] = colorComponent[2];
-            components[startIndex+3] = colorComponent[3];
-#endif
+            if ([color respondsToSelector:@selector(getRed:green:blue:alpha:)]) {
+                [color getRed:&components[startIndex]
+                        green:&components[startIndex+1]
+                         blue:&components[startIndex+2]
+                        alpha:&components[startIndex+3]];
+            } else {
+                const CGFloat *colorComponent = CGColorGetComponents(color.CGColor);
+                
+                components[startIndex]   = colorComponent[0];
+                components[startIndex+1] = colorComponent[1];
+                components[startIndex+2] = colorComponent[2];
+                components[startIndex+3] = colorComponent[3];
+            }
         }];
         
         CGGradientRef gradient = CGGradientCreateWithColorComponents(colorSpace, components, locations, count);
@@ -419,16 +419,17 @@ static CustomizationBlock kDefauldCustomizationBlock = nil;
             if (self.hatchedBackgroundColor) {
                 CGFloat red,green,blue,alpha;
                 
-#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_5_0
-                [self.hatchedBackgroundColor getRed:&red green:&green blue:&blue alpha:&alpha];
-#else
-                const CGFloat *colorComponent = CGColorGetComponents(self.hatchedBackgroundColor.CGColor);
-                
-                red = colorComponent[0];
-                green = colorComponent[1];
-                blue = colorComponent[2];
-                alpha = colorComponent[3];
-#endif
+                if ([self.hatchedBackgroundColor respondsToSelector:@selector(getRed:green:blue:alpha:)]) {
+                    [self.hatchedBackgroundColor getRed:&red green:&green blue:&blue alpha:&alpha];
+                } else {
+                    const CGFloat *colorComponent = CGColorGetComponents(self.hatchedBackgroundColor.CGColor);
+                    
+                    red = colorComponent[0];
+                    green = colorComponent[1];
+                    blue = colorComponent[2];
+                    alpha = colorComponent[3];
+                }
+
                 CGContextSetRGBFillColor(context, red,green, blue, alpha);
                 CGContextFillRect(context, hatchFrame);
             }
@@ -519,13 +520,12 @@ static CustomizationBlock kDefauldCustomizationBlock = nil;
                 
                 if (self.buttonFont)
                     buttonFont = self.buttonFont;
-                
-                
+
 #if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_6_0
                 
-                [button.titleLabel.text drawInRect:CGRectMake(button.frame.origin.x, button.frame.origin.y+10, button.frame.size.width, button.frame.size.height) withFont:buttonFont lineBreakMode:NSLineBreakByClipping alignment:NSTextAlignmentCenter];
+                [button.titleLabel.text drawInRect:CGRectMake(button.frame.origin.x, button.frame.origin.y+10, button.frame.size.width, button.frame.size.height-10) withFont:buttonFont lineBreakMode:NSLineBreakByTruncatingMiddle alignment:NSTextAlignmentCenter];
 #else
-                [button.titleLabel.text drawInRect:CGRectMake(button.frame.origin.x, button.frame.origin.y+10, button.frame.size.width, button.frame.size.height) withFont:buttonFont lineBreakMode:UILineBreakModeClip alignment:UITextAlignmentCenter];
+                [button.titleLabel.text drawInRect:CGRectMake(button.frame.origin.x, button.frame.origin.y+10, button.frame.size.width, button.frame.size.height-10) withFont:buttonFont lineBreakMode:NSLineBreakByTruncatingMiddle alignment:UITextAlignmentCenter];
                 
 #endif
                 
