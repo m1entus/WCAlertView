@@ -26,6 +26,7 @@
 #import "WCAlertView.h"
 #import <QuartzCore/QuartzCore.h>
 #import <objc/runtime.h>
+#import <CoreGraphics/CoreGraphics.h>
 
 @interface WCAlertView () <UIAlertViewDelegate>
 
@@ -517,13 +518,21 @@ static CustomizationBlock kDefauldCustomizationBlock = nil;
                 CGContextSetShadowWithColor(context, self.buttonShadowOffset, self.buttonShadowBlur, self.buttonShadowColor.CGColor);
                 
                 UIFont *buttonFont = button.titleLabel.font;
-                
+
                 if (self.buttonFont)
                     buttonFont = self.buttonFont;
 
+                // Calculate the font size to make sure large text is rendered correctly
+                CGFloat neededFontSize;
+                [button.titleLabel.text sizeWithFont:buttonFont minFontSize:8.0 actualFontSize:&neededFontSize forWidth:button.frame.size.width-6 lineBreakMode:NSLineBreakByWordWrapping];
+                if (neededFontSize < buttonFont.pointSize){
+                    buttonFont = [UIFont fontWithName:buttonFont.fontName size:neededFontSize];
+                }
+
+
 #if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_6_0
                 
-                [button.titleLabel.text drawInRect:CGRectMake(button.frame.origin.x, button.frame.origin.y+10, button.frame.size.width, button.frame.size.height-10) withFont:buttonFont lineBreakMode:NSLineBreakByTruncatingMiddle alignment:NSTextAlignmentCenter];
+                [button.titleLabel.text drawInRect:CGRectMake(button.frame.origin.x, button.frame.origin.y+10, button.frame.size.width, button.frame.size.height-10) withFont:buttonFont lineBreakMode:NSLineBreakByWordWrapping alignment:NSTextAlignmentCenter];
 #else
                 [button.titleLabel.text drawInRect:CGRectMake(button.frame.origin.x, button.frame.origin.y+10, button.frame.size.width, button.frame.size.height-10) withFont:buttonFont lineBreakMode:NSLineBreakByTruncatingMiddle alignment:UITextAlignmentCenter];
                 
