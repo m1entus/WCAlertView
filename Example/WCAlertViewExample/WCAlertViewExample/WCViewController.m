@@ -43,14 +43,14 @@
         // You can also set different appearance for this alert using customization block
         
         alertView.style = WCAlertViewStyleBlackHatched;
-        alertView.alertViewStyle = UIAlertViewStyleLoginAndPasswordInput;
+//        alertView.alertViewStyle = UIAlertViewStyleLoginAndPasswordInput;
     } completionBlock:^(NSUInteger buttonIndex, WCAlertView *alertView) {
-        if (buttonIndex == 0) {
+        if (buttonIndex == alertView.cancelButtonIndex) {
             NSLog(@"Cancel");
         } else {
             NSLog(@"Ok");
         }
-    } cancelButtonTitle:@"Long Message test" otherButtonTitles:@"Ok", nil];
+    } cancelButtonTitle:@"Long cancel message test" otherButtonTitles:@"Ok1", @"Ok2", nil];
     
 }
 
