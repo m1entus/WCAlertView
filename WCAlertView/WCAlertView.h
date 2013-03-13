@@ -56,6 +56,8 @@ typedef void(^CustomizationBlock)(WCAlertView *alertView);
 @property (nonatomic,strong) UIColor *labelTextColor;
 @property (nonatomic,strong) UIColor *labelShadowColor;
 @property (nonatomic,assign) CGSize   labelShadowOffset;
+@property (nonatomic,strong) UIFont  *titleFont;
+@property (nonatomic,strong) UIFont  *messageFont;
 
 /*
  *  Button styles

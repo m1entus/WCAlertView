@@ -19,6 +19,9 @@
 {
     [super viewDidLoad];
     
+    UIFont * titleFont = [UIFont fontWithName:@"Chalkduster" size:20.0f];
+    UIFont * messageFont = [UIFont fontWithName:@"Chalkduster" size:12.0f];
+    
     // Set default appearnce block for all WCAlertViews
     // Similar functionality to UIAppearnce Proxy
     
@@ -35,6 +38,9 @@
         
         alertView.buttonTextColor = [UIColor colorWithRed:0.11f green:0.08f blue:0.39f alpha:1.00f];
         alertView.buttonShadowColor = [UIColor whiteColor];
+        
+        alertView.titleFont = titleFont;
+        alertView.messageFont = messageFont;
     }];
 
     

@@ -303,6 +303,16 @@ static CustomizationBlock kDefauldCustomizationBlock = nil;
                 label.textColor = self.labelTextColor;
                 label.shadowColor = self.labelShadowColor;
                 label.shadowOffset = self.labelShadowOffset;
+                
+                if (   self.titleFont
+                    && [label.text isEqualToString:self.title]) {
+                    label.font = self.titleFont;
+                }
+                
+                if (self.messageFont
+                    && [label.text isEqualToString:self.message]) {
+                    label.font = self.messageFont;
+                }
             }
             
             // Hide button title labels
