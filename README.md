@@ -3,7 +3,7 @@ WCAlertView
 
 WCAlertView is a subclass from UIAlertView with possibility of customization.
 
-You can easly custom your UIAlertView.
+You can easly customize your UIAlertView.
 
 [![](https://raw.github.com/m1entus/WCAlertView/master/Screens/1thumb.png)](https://raw.github.com/m1entus/WCAlertView/master/Screens/1.png)
 [![](https://raw.github.com/m1entus/WCAlertView/master/Screens/2thumb.png)](https://raw.github.com/m1entus/WCAlertView/master/Screens/2.png)
@@ -17,17 +17,17 @@ You can easly custom your UIAlertView.
 
 ## How To Use
 
-There is couple of predefined styles, you can use them, or write you own styles.
+There are a couple of predefined styles, you might use them instead of writing your own.
 
-WCAlertView support blocks.
+WCAlertView supports blocks.
 
-You can also set deafault appearance for all alert views:
+You might set default appearance for all WCAlertView's:
 
 ``` objective-c
 [WCAlertView setDefaultStyle:WCAlertViewStyleWhite];
 ```
 
-Set default appearnce block for all WCAlertViews inside AppDelegate (similar to UIAppearance proxy)
+Set default appearnce block for all WCAlertView's inside AppDelegate (similar to UIAppearance proxy)
 
 ``` objective-c
 [WCAlertView setDefaultCustomiaztonBlock:^(WCAlertView *alertView) {
@@ -46,7 +46,7 @@ Set default appearnce block for all WCAlertViews inside AppDelegate (similar to 
 }];
 ```
 
-If you want to use UITextField for password or plain inputtext, use UIAlertViewStyle.
+If you want to use UITextField for password or plain input text, use UIAlertViewStyle (available since iOS 5.x).
 
 ``` objective-c
 [WCAlertView showAlertWithTitle:@"Some title" message:@"Custom message" customizationBlock:^(WCAlertView *alertView) {
@@ -87,7 +87,7 @@ WCAlertView *alert = [[WCAlertView alloc] initWithTitle:@"Custom AlertView Title
 
 WCAlertView requires either iOS 4.3 and above.
 
-If you want full functionality, please use iOS 5 and above. 
+If you want full functionality, please use iOS 5.x and above. 
 
 ## License
 
@@ -99,7 +99,7 @@ WCAlertView uses ARC.
 
 ## Credits
 
-Inspired by [Aaron Crabtree -  UIAlertView Custom Graphics](http://mobile.tutsplus.com) , borrowing some general approaches in drawing Alert View.
+Inspired by [Aaron Crabtree -  UIAlertView Custom Graphics](http://mobile.tutsplus.com) , borrowed some general approaches in drawing Alert View.
 Simple block extension got from [wannabegeek](http://github.com/wannabegeek/UIAlertViewExtentsions).
 
 ## Contact
