@@ -66,6 +66,30 @@ static CustomizationBlock kDefauldCustomizationBlock = nil;
 
     WCAlertView *alertView = [[self alloc] initWithTitle:title message:message completionBlock:block cancelButtonTitle:cancelButtonTitle otherButtonTitles:nil];
     
+    NSInteger otherButtonCount = 0;
+    
+    // Fix Issue #14: Cancel and Ok buttons are switched
+    // If Cancel button is added first and other button count is more than 1,
+    // cancel and ok buttons are switched
+    
+    if (otherButtonTitles != nil) {
+        id eachObject;
+        va_list argumentList;
+        if (otherButtonTitles) {
+            otherButtonCount++;
+            va_start(argumentList, otherButtonTitles);
+            while ((eachObject = va_arg(argumentList, id))) {
+                otherButtonCount++;
+            }
+            va_end(argumentList);
+        }
+    }
+    
+    if (otherButtonCount <= 1 && cancelButtonTitle) {
+        [alertView addButtonWithTitle:cancelButtonTitle];
+        alertView.cancelButtonIndex = [alertView numberOfButtons] - 1;
+    }
+    
     if (otherButtonTitles != nil) {
         id eachObject;
         va_list argumentList;
@@ -78,8 +102,8 @@ static CustomizationBlock kDefauldCustomizationBlock = nil;
             va_end(argumentList);
         }
     }
-
-	if (cancelButtonTitle) {
+    
+    if (cancelButtonTitle && otherButtonCount > 1) {
 		[alertView addButtonWithTitle:cancelButtonTitle];
 		alertView.cancelButtonIndex = [alertView numberOfButtons] - 1;
 	}

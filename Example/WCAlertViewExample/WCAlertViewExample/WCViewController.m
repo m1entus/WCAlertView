@@ -56,7 +56,7 @@
         } else {
             NSLog(@"Ok");
         }
-    } cancelButtonTitle:@"Long cancel message test" otherButtonTitles:@"Ok1", @"Ok2", nil];
+    } cancelButtonTitle:@"Cancel" otherButtonTitles:@"Ok", nil];
     
 }
 
