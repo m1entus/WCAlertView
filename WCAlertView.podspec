@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "WCAlertView"
-  s.version      = "1.0.0"
+  s.version      = "1.0.1"
   s.summary      = "WCAlertView is deliverd from UIAlertView. It's support color customization and blocks."
 
   s.homepage     = "https://github.com/m1entus/WCAlertView"
@@ -10,7 +10,7 @@ Pod::Spec.new do |s|
   s.author       = { "Michał Zaborowski" => "m1entus@gmail.com" }
 
   s.source       = { :git => "https://github.com/m1entus/WCAlertView.git", 
-					 :tag => '1.0.0' }
+					 :tag => '1.0.1' }
 					
   s.source_files = 'WCAlertView/*.{h,m}'
 	
