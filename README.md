@@ -15,6 +15,15 @@ You can easly customize your UIAlertView.
 [![](https://raw.github.com/m1entus/WCAlertView/master/Screens/7thumb.png)](https://raw.github.com/m1entus/WCAlertView/master/Screens/7.png)
 [![](https://raw.github.com/m1entus/WCAlertView/master/Screens/8thumb.png)](https://raw.github.com/m1entus/WCAlertView/master/Screens/8.png)
 
+## iOS 7 and above not supported !
+
+In iOS7, the UIAlertView window does not appear in -[UIApplication windows]. 
+In fact, the UIAlertView itself is never added to any window, -[UIAlertView window] is always nil. 
+Instead, the alert view manages a variety of undocumented views placed in -[UIApplication keyWindow] with no reference back to the alert view.
+ 
+[More informaction on freecoder blog:](http://blog.freecoder.org/?p=260) 
+[Stackoverflow issue:](http://stackoverflow.com/questions/18702565/find-uialertview-without-having-reference-to-it-ios-7)
+
 ## How To Use
 
 There are a couple of predefined styles, you might use them instead of writing your own.
