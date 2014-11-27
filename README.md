@@ -117,3 +117,7 @@ Simple block extension got from [wannabegeek](http://github.com/wannabegeek/UIAl
 ## Contact
 
 [Michal Zaborowski](http://github.com/m1entus) 
+
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/m1entus/wcalertview/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
