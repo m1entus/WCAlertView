@@ -1,6 +1,10 @@
 WCAlertView
 ==========
 
+## For iOS 8 and above support use my UIAlertController category which works simillar
+
+[UIAlertController-MZStyle](https://github.com/m1entus/UIAlertController-MZStyle)
+
 ## iOS 7 and above not supported !
 
 In iOS7, the UIAlertView window does not appear in -[UIApplication windows]. 
